@@ -16,18 +16,16 @@ export default function App() {
           });},[]);
 
   return (
-    <div>
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
       {items?.map((item:any) => (
-          <div key={item._id}>
+          <View key={item._id}>
             film tittel: {item.title}
-          </div>
+          </View>
       ))
       }
       <StatusBar style="auto" />
     </View>
-    </div>
   );
 }
 
