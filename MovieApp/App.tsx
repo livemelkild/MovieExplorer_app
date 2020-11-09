@@ -1,41 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, View } from 'react-native';
+import { Container , Text} from 'native-base';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
+import Header from "./Components/Header";
+import Card from "./Components/Card"
 
 export default function App() {
-
-  const [items, setItems] = useState();
-
-  useEffect(() => {
-    fetch(`http://localhost:4000/api/movie`)
-      .then(res => res.json()) //format the resault to json
-      .then(res => {
-          console.log(res)
-          setItems(res.DATA)
-          });},[]);
-
-  return (
-    <div>
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      {items?.map((item:any) => (
-          <div key={item._id}>
-            film tittel: {item.title}
-          </div>
-      ))
-      }
-      <StatusBar style="auto" />
-    </View>
-    </div>
-  );
+    const [isReady, setReady] = useState(false);
+    useEffect(() => {
+        native_base();
+        setReady(true);
+    });
+    const app = !isReady ? (
+          <AppLoading />
+        ) : (
+          <Container>
+            <Header />
+            <Card />
+          </Container>
+    );
+    return app;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+async function native_base() {
+await Font.loadAsync({
+  Roboto: require("native-base/Fonts/Roboto.ttf"),
+  Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+  ...Ionicons.font,
 });
+}
+
+
+
