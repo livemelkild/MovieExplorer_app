@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
-export default class CardShowcaseExample extends Component {
-  render() {
+
+export interface iMovie {
+  _id: string | number,
+  title: string,
+  year: string | number,
+  users_rating: string | number,
+  img_url: string,
+  genre: string,
+}
+
+type MovieProps = {
+  data: iMovie;
+}
+
+const Movie = ({data}: MovieProps) => {
+
     return (
       
         <Content>
@@ -11,16 +25,16 @@ export default class CardShowcaseExample extends Component {
               <Left>
                 <Thumbnail source={{uri: 'Image URL'}} />
                 <Body>
-                  <Text>NativeBase</Text>
-                  <Text note>April 15, 2016</Text>
+                  <Text>{data.title}</Text>
+                  <Text note>{data.year}</Text>
                 </Body>
               </Left>
             </CardItem>
             <CardItem>
               <Body>
-                <Image source={{uri: 'Image URL'}} />
+                {/*<Image source={this.props.img_url} />*/}
                 <Text>
-                  //Your text here
+                  {data.users_rating}
                 </Text>
               </Body>
             </CardItem>
@@ -35,7 +49,6 @@ export default class CardShowcaseExample extends Component {
           </Card>
         </Content>
     );
-  }
 }
 
 
@@ -46,4 +59,6 @@ const styles = StyleSheet.create({
 
     }
   });
+
+  export default Movie ;
   
