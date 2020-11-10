@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, FlatList } from "react-native";
 import Movie from "./Movie";
 
 export interface iMovie {
-  id: string | number;
+  id: string;
   title: string;
   year: string | number;
   users_rating: string | number;
@@ -11,32 +11,28 @@ export interface iMovie {
   genre: string;
 }
 
-function MovieIterator(Props: iMovie) {
-  const [items, setItems] = useState();
+function MovieIterator() {
+  const [items, setItems] = useState<iMovie[]>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/movie`)
+    console.log("live");
+
+    fetch(`http://10.24.17.146:4000/api/movie`)
       .then((res) => res.json()) //format the resault to json
       .then((res) => {
         console.log(res);
         setItems(res.DATA);
-      });
+      })
+      .catch((e) => console.log(e));
   }, []);
 
   return (
     <View>
-      {items?.map((item: any) => (
-        <View key={item._id}>
-          <Movie
-            id={item._id}
-            title={item.title}
-            year={item.year}
-            users_rating={item.user_rating}
-            img_url={item.img_url}
-            genre={item.genre}
-          />
-        </View>
-      ))}
+      <FlatList
+        data={items}
+        renderItem={({ item }) => <Movie data={item} />}
+        keyExtractor={(item, _) => item.id}
+      />
     </View>
   );
 }
