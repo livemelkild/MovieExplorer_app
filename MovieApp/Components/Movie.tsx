@@ -12,7 +12,12 @@ const Movie = ({ data }: MovieProps) => {
     <Card>
       <Card.Title>{data.title}</Card.Title>
       <Card.Divider />
-      <Text style={{ marginBottom: 20 }}></Text>
+      <Text style={{ marginBottom: 20 }}>
+        <Image
+          source={{ uri: data.img_url }}
+          style={{ width: 200, height: 400 }}
+        />
+      </Text>
       <Button
         icon={<Icon name="code" color="#ffffff" />}
         buttonStyle={{
