@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, FlatList } from "react-native";
 import Movie from "./Movie";
-import SearchBar from "./SearchBar";
+import SearchBaren from "./SearchBaren";
 import { useSelector } from "react-redux";
 import { RootStore } from "../Store";
 import { searchInput } from "../Action/Actions";
@@ -45,7 +45,7 @@ function MovieIterator() {
         centerComponent={{ text: "Movie Explorer", style: { color: "#fff" } }}
         rightComponent={{ icon: "home", color: "#fff" }}
       />
-      <SearchBar />
+      <SearchBaren />
       <FlatList
         data={items}
         renderItem={({ item }) => <Movie data={item} />}
