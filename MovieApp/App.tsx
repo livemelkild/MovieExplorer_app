@@ -9,7 +9,7 @@ type RootStackParaList = {
   Movies: undefined;
   MovieInfo: undefined;
 };
-import SearchBar from "./Components/SearchBar";
+import SearchBar from "./Components/SearchBaren";
 import { Provider } from "react-redux";
 import Store from "./Store";
 import { Header } from "react-native-elements";

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { RootStore } from "../Store";
 import { searchInput } from "../Action/Actions";
 import { Header } from "react-native-elements";
+import Pages from "./Pages";
 
 export interface iMovie {
   id: string;
@@ -46,6 +47,8 @@ function MovieIterator() {
         rightComponent={{ icon: "home", color: "#fff" }}
       />
       <SearchBaren />
+      <Pages />
+
       <FlatList
         data={items}
         renderItem={({ item }) => <Movie data={item} />}
