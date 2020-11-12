@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image, FlatList, StyleSheet } from "react-native";
 import Movie from "./Movie";
 import SearchBaren from "./SearchBaren";
 import { useSelector } from "react-redux";
@@ -48,7 +48,6 @@ function MovieIterator() {
       />
       <SearchBaren />
       <Pages />
-
       <FlatList
         data={items}
         renderItem={({ item }) => <Movie data={item} />}
@@ -59,3 +58,12 @@ function MovieIterator() {
 }
 
 export default MovieIterator;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
