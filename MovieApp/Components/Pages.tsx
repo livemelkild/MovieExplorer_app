@@ -29,7 +29,7 @@ const Pages = () => {
     }
   };
   return (
-    <View>
+    <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
       <Button onPress={() => changePageButton("prevPage")} title="PREV" />
       <Button onPress={() => changePageButton("resetPage")} title="RESET" />
       <Button onPress={() => changePageButton("nextPage")} title="NEXT" />

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 // hvorfor går det ikke å importere filene?
 import { searchInput } from "../Action/Actions";
 import { RootStore } from "../store";
-import { View, TextInput, StyleSheet } from "react-native";
+import { View, TextInput, StyleSheet, Text } from "react-native";
 import { SearchBar, Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -24,8 +24,11 @@ export const SearchBaren = () => {
         onChangeText={(text) => setSearch(text)}
         value={search}
       />
+      <Text></Text>
       {/*<TextInput onChangeText={(text) => setSearch(text)} /> */}
-      <Button style={styles.button} onPress={handleSubmit} title="Search" />
+      <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+        <Button style={styles.button} onPress={handleSubmit} title="Search" />
+      </View>
       {/*legg inn filter-logikk*/}
     </View>
   );
