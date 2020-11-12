@@ -9,16 +9,22 @@ type RootStackParaList = {
   Movies: undefined;
   MovieInfo: undefined;
 };
+import SearchBar from "./Components/SearchBar";
+import { Provider } from "react-redux";
+import Store from "./Store";
+import { Header } from "react-native-elements";
 
 export default function App() {
   const Stack = createStackNavigator<RootStackParaList>();
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Movies" component={MovieIterator} />
-        <Stack.Screen name="MovieInfo" component={MovieInfo} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={Store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Movies" component={MovieIterator} />
+          <Stack.Screen name="MovieInfo" component={MovieInfo} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
