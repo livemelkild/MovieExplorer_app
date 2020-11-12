@@ -17,26 +17,30 @@ export interface iMovie {
 }
 
 function MovieIterator() {
-  const searchState = useSelector(
-    (state: RootStore) => state.searchReducer.search
-  );
+  const searchState = useSelector((state: RootStore) => state.searchReducer.search);
+
   const [search, setSearch] = useState(searchState);
 
   searchInput(search);
+
+  const filterSingle = useSelector((state: RootStore) => state.filterReducer.filterby);
+  const filter = [filterSingle]
+
+  const order = useSelector((state: RootStore) => state.sortReducer.order);
 
   const [items, setItems] = useState<iMovie[]>([]);
 
   useEffect(() => {
     console.log("live");
 
-    fetch(`http://10.24.17.146:4000/api/movie?search=${searchState}`)
+    fetch(`http://10.24.17.146:4000/api/movie?search=${searchState}&filter=${filter}&order=${order}`)
       .then((res) => res.json()) //format the resault to json
       .then((res) => {
         console.log(res);
         setItems(res.DATA);
       })
       .catch((e) => console.log(e));
-  }, [searchState]);
+  }, [searchState, filterSingle, order]);
 
   return (
     <View>
