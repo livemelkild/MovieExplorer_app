@@ -1,13 +1,25 @@
+import "react-native-gesture-handler";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MovieIterator from "./Components/MovieIterator";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import MovieInfo from "./Components/MovieInfo";
+
+type RootStackParaList = {
+  Movies: undefined;
+  MovieInfo: undefined;
+};
 
 export default function App() {
+  const Stack = createStackNavigator<RootStackParaList>();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <MovieIterator />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Movies" component={MovieIterator} />
+        <Stack.Screen name="MovieInfo" component={MovieInfo} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
