@@ -5,10 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { searchInput } from "../Action/Actions";
 import { RootStore } from "../store";
 import { View, TextInput, StyleSheet, Text } from "react-native";
-import { SearchBar, Button } from "react-native-elements";
-import { Overlay } from "react-native-elements";
+import { SearchBar, Button, Overlay, ThemeProvider } from "react-native-elements";
 import SearchSort from "./SearchSort";
-import Modal from 'react-native-modal'
+
 
 export const SearchBaren = () => {
   const dispatch: Dispatch<any> = useDispatch();
@@ -31,18 +30,25 @@ export const SearchBaren = () => {
         placeholder="Explore.."
         onChangeText={(text) => setSearch(text)}
         value={search}
+        containerStyle={styles.searchField}
+        inputContainerStyle={styles.input} 
       />
       <Text></Text>
-      {/*<TextInput onChangeText={(text) => setSearch(text)} /> */}
       <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-        <Button style={styles.button} onPress={handleSubmit} title="Search" />
+        <Button buttonStyle={styles.buttonColor} style={{padding: 20}} onPress={handleSubmit} title="Search" />
       </View>
       {search === "" ? (
         <View />
       ) : (
         <View>
-        <Button title="Show filter" onPress={toggleOverlay}></Button>
+        <Button buttonStyle={styles.buttonColor} title="Show filter" onPress={toggleOverlay}></Button>
+
+        <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
+            <SearchSort/>
+        </Overlay>
+        {/*}
         {visible === true ? 
+        
 
         <Modal 
         isVisible={visible}
@@ -51,9 +57,11 @@ export const SearchBaren = () => {
             <SearchSort/>
             <Button title="Hide filter" onPress={toggleOverlay}></Button>
         </Modal>
+        
         :
         <View />
           }
+          */}
         </View>
         )}
     </View>
@@ -63,7 +71,15 @@ export const SearchBaren = () => {
 export default SearchBaren;
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: "red",
+  searchField: {
+    backgroundColor: "#30475e"
   },
+  input: {
+    backgroundColor: "#ececec"
+  },
+  buttonColor: {
+    backgroundColor: "#222831",
+    borderColor: "#c1a57b",
+    borderWidth: 2 
+}
 });

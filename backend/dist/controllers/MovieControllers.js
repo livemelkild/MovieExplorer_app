@@ -25,7 +25,7 @@ class MovieController {
         const ratings = parseInt(req.query.ranking);
         console.log(ratings);
         const order = req.query.order ? parseInt(req.query.order) : 0;
-        const limitView = req.query.limit ? parseInt(req.query.limit) : 4;
+        const limitView = req.query.limit ? parseInt(req.query.limit) : 6;
         const page = req.query.page ? parseInt(req.query.page) : 0;
         const search = req.query.search ? req.query.search : "";
         console.log(search);

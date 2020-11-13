@@ -10,7 +10,7 @@ import Footer from "./Footer";
 
 function Router() {
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <Text></Text>
       <SearchBaren />
       <Text></Text>
@@ -29,8 +29,6 @@ export default Router;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#30475e",
   },
 });
