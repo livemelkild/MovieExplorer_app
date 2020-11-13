@@ -29,6 +29,9 @@ const Movie = ({ data }: MovieProps) => {
             marginLeft: 0,
             marginRight: 0,
             marginBottom: 0,
+            backgroundColor: "#222831",
+            borderColor: "#c1a57b",
+            borderWidth: 2 
           }}
           title="More info"
           onPress={() => navigation.navigate("MovieInfo", data)}

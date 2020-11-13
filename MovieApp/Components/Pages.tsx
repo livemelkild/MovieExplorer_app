@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { nextPage, prevPage, resetPage } from "../Action/Actions";
 import { Dispatch } from "redux";
 import { RootStore } from "../store";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 
 interface iProps {
@@ -30,11 +30,19 @@ const Pages = () => {
   };
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-      <Button onPress={() => changePageButton("prevPage")} title="PREV" />
-      <Button onPress={() => changePageButton("resetPage")} title="RESET" />
-      <Button onPress={() => changePageButton("nextPage")} title="NEXT" />
+      <Button buttonStyle={styles.buttonColor} onPress={() => changePageButton("prevPage")} title="PREV" />
+      <Button buttonStyle={styles.buttonColor} onPress={() => changePageButton("resetPage")} title="RESET" />
+      <Button buttonStyle={styles.buttonColor} onPress={() => changePageButton("nextPage")} title="NEXT" />
     </View>
   );
 };
 
 export default Pages;
+
+const styles = StyleSheet.create({
+  buttonColor: {
+      backgroundColor: "#222831",
+      borderColor: "#c1a57b",
+      borderWidth: 2 
+  }
+})

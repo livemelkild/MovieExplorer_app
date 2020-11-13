@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, FlatList, StyleSheet } from "react-native";
+import { View, Text, Image, FlatList, StyleSheet, Dimensions } from "react-native";
 import Movie from "./Movie";
 import { useSelector } from "react-redux";
 import { RootStore } from "../Store";
@@ -33,11 +33,12 @@ function MovieIterator() {
 
   const [items, setItems] = useState<iMovie[]>([]);
 
+  //husk å endre IP-adresse
   useEffect(() => {
     console.log("live");
 
     fetch(
-      `http://10.24.17.146:4000/api/movie?search=${searchState}&filter=${filter}&order=${order}&page=${page}`
+      `http://10.0.0.122:4000/api/movie?search=${searchState}&filter=${filter}&order=${order}&page=${page}`
     )
       .then((res) => res.json()) //format the resault to json
       .then((res) => {
@@ -48,7 +49,7 @@ function MovieIterator() {
   }, [searchState, filterSingle, order, page]);
 
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={items}
         renderItem={({ item }) => <Movie data={item} />}
@@ -63,9 +64,12 @@ export default MovieIterator;
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+   // flex: 1,
+    backgroundColor: "#30475e"
+    //alignItems: "center", - ser fint ut på web, men forsvinner på mobil
+    
+   // width: Dimensions.get("window").width / 2.6,
+   // height: Dimensions.get("window").width / 2.6
+
   },
 });
