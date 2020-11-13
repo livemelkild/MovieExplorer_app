@@ -8,6 +8,7 @@ import { View, TextInput, StyleSheet, Text } from "react-native";
 import { SearchBar, Button } from "react-native-elements";
 import { Overlay } from "react-native-elements";
 import SearchSort from "./SearchSort";
+import Modal from 'react-native-modal'
 
 export const SearchBaren = () => {
   const dispatch: Dispatch<any> = useDispatch();
@@ -23,6 +24,7 @@ export const SearchBaren = () => {
   const toggleOverlay = () => {
     setVisible(!visible);
   };
+
   return (
     <View>
       <SearchBar
@@ -38,12 +40,22 @@ export const SearchBaren = () => {
       {search === "" ? (
         <View />
       ) : (
+        <View>
         <Button title="Show filter" onPress={toggleOverlay}></Button>
-      )}
-      <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
-        <SearchSort />
-      </Overlay>
-      {/*legg inn filter-logikk*/}
+        {visible === true ? 
+
+        <Modal 
+        isVisible={visible}
+        onBackdropPress={() => setVisible(false)}
+        >
+            <SearchSort/>
+            <Button title="Hide filter" onPress={toggleOverlay}></Button>
+        </Modal>
+        :
+        <View />
+          }
+        </View>
+        )}
     </View>
   );
 };
