@@ -65,9 +65,9 @@ export default MovieIterator;
 const styles = StyleSheet.create({
   container: {
    // flex: 1,
-    backgroundColor: "#30475e",
-    justifyContent: "center",
+    backgroundColor: "#30475e"
     //alignItems: "center", - ser fint ut på web, men forsvinner på mobil
+    
    // width: Dimensions.get("window").width / 2.6,
    // height: Dimensions.get("window").width / 2.6
 
