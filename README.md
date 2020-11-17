@@ -1,4 +1,4 @@
-## Movie Explorer app
+# Movie Explorer app
 
 Movie Explorer er en applikasjon for både iphone og android. 
 Her kan brukeren søke i en database med over 62 058 forskjellige 
@@ -35,11 +35,11 @@ seg hyppigere av end-to-end testing.
 I utviklingen har vi brukt expo-cli både for å initiere prosjektet gjennom expo 
 init og for å manuelt brukerteste applikasjonen ende-til-ende på iOS og Android.
 
-##Typescript
+###  Typescript
 
-##React Native
+###  React Native
 Hoppet fra react til react native har ikke vært for stort ettersom oppsettet er nokså likt, bare ny syntax. Den store forskjellen var stylingen. 
 I steden for å ha egne CSS filer så stylet vi direkte i komponenten. Dette var uvant, og koden 
 bærer preg av lite egendesignet styling. Vi har lent oss mye på react-native-elements sine “stylinger”. 
 
-##Testing
+## Testing
