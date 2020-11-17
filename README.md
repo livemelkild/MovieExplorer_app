@@ -37,9 +37,17 @@ init og for å manuelt brukerteste applikasjonen ende-til-ende på iOS og Androi
 
 ###  Typescript
 
+Typescript forbedrer kodekvaliteten, og gjør den mer forståelig. 
+I tillegg unngår man vanlig feil som oppstår med Javascript som å glemme å deklarere en variabel eller kalle på en ikke-eksisterende funksjon.
+Typescript er lett å overføre til andre utviklere.
+
+
 ###  React Native
 Hoppet fra react til react native har ikke vært for stort ettersom oppsettet er nokså likt, bare ny syntax. Den store forskjellen var stylingen. 
 I steden for å ha egne CSS filer så stylet vi direkte i komponenten. Dette var uvant, og koden 
 bærer preg av lite egendesignet styling. Vi har lent oss mye på react-native-elements sine “stylinger”. 
 
 ## Testing
+Det har blitt utført manuell end-2-end testing på appliaksjonen. Søk, filter, sortering og blaing mellom sider fungerer på iOS og Android. 
+Under implementering har appen blitt testet på iOS ettersom begge utviklerene hadde denne mobiltypen. Da vi testet for Android så vi at all funksjonaliteten var bevart, men bildene skalerte seg ikke like pent her. 
+Vi valgte å nedprioritere dette ettersom annen funksjonalitet ble prioritert.
