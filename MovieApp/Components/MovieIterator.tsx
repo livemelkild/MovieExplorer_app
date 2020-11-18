@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, FlatList, StyleSheet, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
 import Movie from "./Movie";
 import { useSelector } from "react-redux";
 import { RootStore } from "../Store";
@@ -35,10 +42,8 @@ function MovieIterator() {
 
   //husk å endre IP-adresse
   useEffect(() => {
-    console.log("live");
-
     fetch(
-      `http://10.0.0.122:4000/api/movie?search=${searchState}&filter=${filter}&order=${order}&page=${page}`
+      `http://it2810-09.idi.ntnu.no:4000/api/movie?search=${searchState}&filter=${filter}&order=${order}&page=${page}`
     )
       .then((res) => res.json()) //format the resault to json
       .then((res) => {
@@ -64,12 +69,11 @@ export default MovieIterator;
 
 const styles = StyleSheet.create({
   container: {
-   // flex: 1,
-    backgroundColor: "#30475e"
+    // flex: 1,
+    backgroundColor: "#30475e",
     //alignItems: "center", - ser fint ut på web, men forsvinner på mobil
-    
-   // width: Dimensions.get("window").width / 2.6,
-   // height: Dimensions.get("window").width / 2.6
 
+    // width: Dimensions.get("window").width / 2.6,
+    // height: Dimensions.get("window").width / 2.6
   },
 });
