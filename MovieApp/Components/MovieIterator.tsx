@@ -43,7 +43,7 @@ function MovieIterator() {
   //husk å endre IP-adresse
   useEffect(() => {
     fetch(
-      `http://it2810-09.idi.ntnu.no:4000/api/movie?search=${searchState}&filter=${filter}&order=${order}&page=${page}`
+      `http://it2810-09.idi.ntnu.no:3000/api/movie?search=${searchState}&filter=${filter}&order=${order}&page=${page}`
     )
       .then((res) => res.json()) //format the resault to json
       .then((res) => {
