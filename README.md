@@ -1,8 +1,28 @@
+
 # Movie Explorer app
+
+## Oppsett av prosjektet
+Klon prosjektet fra gitlab
+### `git clone + SSH/HTTP nøkkel`
+
+cd inn i MovieApp-mappen:
+#### `it2810prosjekt_4->MovieApp`
+
+I prosjekt directorien kjører du
+#### `npm install`
+Backend kjører kontinuerlig på vm, derfor trenger du bare å kjøre frontend <br/>
+#### Kjøre på mobil:
+#### `expo start`
+For å kjøre på mobil må du laste ned expo. <br/>
+IOS: gå på kamera og scann QR-koden<br/>
+Android: Scan QR-koden i expo-appen
+
+#### Kjøre i nettleser:
+#### `npm run web`
 
 Movie Explorer er en applikasjon for både iphone og android. 
 Her kan brukeren søke i en database med over 62 058 forskjellige 
-filmer og filtrere etter ønsket sjanger og utgivelsesår. 
+filmer, og filtrere etter ønsket sjanger og utgivelsesår på søket som er utført. 
 Ved å klikke på “mer info” på en film kan brukeren få opp 
 info om utgivelsesår og tilhørende sjanger til filmen. 
 Når et søk gir et større resultat kan brukeren bla seg 
