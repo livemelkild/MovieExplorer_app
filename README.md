@@ -29,10 +29,9 @@ videre med knappene nederst på appen. Appen baserer seg på React Native med Re
 <br/>
 
 ![Screenshot](forside.jpg)
-![Screenshot](sok.jpg)
 ![Screenshot](sort_filter.jpg)
 ![Screenshot](more_info.jpg)
-![Screenshot](blaing.jpg)
+
 
 
 
