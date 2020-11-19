@@ -1,24 +1,5 @@
 # Movie Explorer app
 
-## Oppsett av prosjektet
-Klon prosjektet fra gitlab
-### `git clone SSH/HTTP nøkkel`
-
-cd inn i MovieApp-mappen:
-#### `it2810prosjekt_4->MovieApp`
-
-I prosjekt directorien kjører du
-#### `npm install`
-Backend kjører kontinuerlig på vm, derfor trenger du bare å kjøre frontend <br/>
-#### Kjør på mobil:
-#### `expo start`
-For å kjøre på mobil må du laste ned expo. <br/>
-IOS: gå på kamera og scann QR-koden<br/>
-Android: Scan QR-koden i expo-appen
-
-#### Kjør i nettleser:
-#### `npm run web`
-
 Movie Explorer er en applikasjon for både iphone og android.
 Her kan brukeren søke i en database med over 62 058 forskjellige 
 filmer. Etter at et søk er utført dukker alterntivet for å filtrere etter ønsket sjanger og utgivelsesår. 
@@ -79,3 +60,23 @@ bærer preg av lite egendesignet styling. Vi har lent oss mye på react-native-e
 Det har blitt utført manuell end-2-end testing på appliaksjonen. Søk, filter, sortering og blaing mellom sider fungerer på iOS og Android. 
 Under implementering har appen blitt testet på iOS ettersom begge utviklerene hadde denne mobiltypen. Da vi testet for Android så vi at all funksjonaliteten var bevart, men bildene skalerte seg ikke like pent her. 
 Vi valgte å nedprioritere dette ettersom annen funksjonalitet ble prioritert.
+
+## Oppsett av prosjektet
+Klon prosjektet fra gitlab
+### `git clone SSH/HTTP nøkkel`
+
+cd inn i MovieApp-mappen:
+#### `it2810prosjekt_4->MovieApp`
+
+I prosjekt directorien kjører du
+#### `npm install`
+Backend kjører kontinuerlig på vm, derfor trenger du bare å kjøre frontend <br/>
+#### Kjør på mobil:
+#### `expo start`
+For å kjøre på mobil må du laste ned expo. <br/>
+IOS: gå på kamera og scann QR-koden<br/>
+Android: Scan QR-koden i expo-appen
+
+#### Kjør i nettleser:
+#### `npm run web`
+
