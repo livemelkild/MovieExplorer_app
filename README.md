@@ -1,6 +1,7 @@
 # Movie Explorer app
 
-(En ukes langt prosjekt som baserte seg på å bruke logikken fra nettsiden MovieExplorer, som vi hadde laget, til å få appliksjonenen over på app ved bruk av tekonolgien React Native. Det ble dessverre ikke like mye tid til "styling" av selve appen) 
+<em>(Et ukes langt prosjekt som baserte seg på å bruke logikken fra nettsiden MovieExplorer, som vi hadde laget, til å få appliksjonenen over på app ved bruk av tekonolgien React Native. Det ble dessverre ikke like mye tid til "styling" i dette prosjektet) </em>
+<br />
 <br />
 Movie Explorer er en applikasjon for både iphone og android.
 Her kan brukeren søke i en database med over 62 058 forskjellige 
