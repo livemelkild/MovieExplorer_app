@@ -1,5 +1,7 @@
 # Movie Explorer app
 
+(En ukes langt prosjekt som baserte seg på å bruke logikken fra nettsiden MovieExplorer, som vi hadde laget, til å få appliksjonenen over på app ved bruk av tekonolgien React Native. Det ble dessverre ikke like mye tid til "styling" av selve appen) 
+<br />
 Movie Explorer er en applikasjon for både iphone og android.
 Her kan brukeren søke i en database med over 62 058 forskjellige 
 filmer. Etter at et søk er utført dukker alterntivet for å filtrere etter ønsket sjanger og utgivelsesår. 
@@ -9,9 +11,9 @@ Når et søk gir et større resultat kan brukeren bla seg
 videre med knappene nederst på appen. Appen baserer seg på React Native med Redux. 
 <br/>
 
-![Screenshot](forside.jpg)
-![Screenshot](sort_filter.jpg)
-![Screenshot](more_info.jpg)
+<img width="334" alt="Skjermbilde 2020-11-19 kl  14 13 54" src="https://user-images.githubusercontent.com/69898083/99670836-7656c080-2a71-11eb-93b8-5563e7ccb9d1.png">
+<img width="526" alt="Skjermbilde 2020-11-19 kl  14 14 29" src="https://user-images.githubusercontent.com/69898083/99670906-8c648100-2a71-11eb-9e64-73533517d731.png">
+
 
 
 
