@@ -21,7 +21,7 @@ Android: Scan QR-koden i expo-appen
 
 Movie Explorer er en applikasjon for både iphone og android.
 Her kan brukeren søke i en database med over 62 058 forskjellige 
-filmer, og filtrere etter ønsket sjanger og utgivelsesår på søket som er utført. 
+filmer. Etter at et søk er utført dukker alterntivet for å filtrere etter ønsket sjanger og utgivelsesår. 
 Ved å klikke på “mer info” på en film kan brukeren få opp 
 info om utgivelsesår og tilhørende sjanger til filmen. 
 Når et søk gir et større resultat kan brukeren bla seg 
